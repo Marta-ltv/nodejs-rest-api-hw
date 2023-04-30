@@ -17,117 +17,29 @@ mongoose.connect(DB_HOST)
   });
 
 
-// const app = require('./app')
-
-// app.listen(3000, () => {
-//   console.log('Server running. Use our API on port: 3000');
-// });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const fs = require("fs/promises");
-// const express = require('express');
-// const morgan = require('morgan');
-// const cors = require('cors');
-
-// const app = express();
-
-
-// function checkApiKey(req, res, next) {
-//   console.log(req.method, req.url);
-//   const { apiKey } = req.query;
-//   if (apiKey === '12345') {
-//     return next();
-//   }
-//   return res.status(401).json({ error: 'Unauthorized' });
-// };
-
-// app.use(checkApiKey);
-
-// app.use(morgan('combined'));
-// app.use(cors());
-
-
-// app.get('/', async(req, res) => {
-//    try {
-//     const data = await fs.readFile("contacts.json", "utf-8");
-//     res.json(JSON.parse(data));
-//   } catch (error) {
-//     res.status(500).send(error);
+// const { MongoClient, ServerApiVersion } = require('mongodb');
+// const DB_HOST =
+  // "mongodb+srv://Martina:QZsC7odZNnlYOYDA@cluster0.fcknohc.mongodb.net/db-contacts?retryWrites=true&w=majority";
+// Create a MongoClient with a MongoClientOptions object to set the Stable API version
+// const client = new MongoClient(DB_HOST, {
+//   serverApi: {
+//     version: ServerApiVersion.v1,
+//     strict: true,
+//     deprecationErrors: true,
 //   }
 // });
-
-// Body parser middleware
-// app.use(express.json());
-
-// app.post('/contacts', (req, res) => {
-//   const newContact = req.body;
-//   console.log({newContact});
-
-//   res.end();
-// });
-
-
-// app.get('/movies', (req, res) => {
-//   res.json([{name: "Allen Raymond"}]);
-// });
-  
-// app.all('/contacts', (req, res) => {
-//   console.log(req.method, req.url);
-//   res.send('Contacts');
-// });
-
-// app.use(express.static('contacts.json'));
-
-
-
-
-// app.listen(3000, () => {
-//   console.log('Server running. Use our API on port: 3000');
-// })
-
-
-
-
-
-
-
-
-// const http = require('http');
-
-// const server = http.createServer((req, res) => {
-//   const { url } = req;
-//   console.log({ url });
-
-
-//   res.statusCode = 200;
-//   res.setHeader('Content-Type', 'text/plain');
-//   res.end('Hello world');
-// });
-
-// server.listen(3000, () => {
-//   console.log('Server running at http://127.0.0.1:3000');
-// })
-
-
-
+// async function run() {
+//   try {
+    // Connect the client to the server	(optional starting in v4.7)
+    // await client.connect();
+    // Send a ping to confirm a successful connection
+  //   await client.db("admin").command({ ping: 1 });
+  //   console.log("Pinged your deployment. You successfully connected to MongoDB!");
+  // } finally {
+    // Ensures that the client will close when you finish/error
+//     await client.close();
+//   }
+// }
+// run().catch(console.dir);
